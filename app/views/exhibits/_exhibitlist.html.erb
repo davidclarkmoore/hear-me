@@ -1,0 +1,22 @@
+
+<h1>Listing Exhibits</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Exhibit Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @exhibits.each do |exhibit| %>
+      <tr>
+        <td><%= link_to exhibit.name, exhibit_posts_path(exhibit) %></td>
+        <td><%= exhibit.description %></td>
+
+        <td><%= link_to 'Edit', edit_exhibit_path(exhibit) %> | <%= link_to 'Delete', exhibit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
