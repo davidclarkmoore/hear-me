@@ -12,7 +12,7 @@
   </div>
   <div class="panel-body">
 
-  <%= link_to 'New Post', new_exhibit_post_path, :class => "btn btn-success" %>
+  <%= link_to 'New Post', new_exhibit_post_path, :class => "btn btn-success right" %>
     <h1>Listing Posts</h1>
 
     <table class="table table-striped">
@@ -27,9 +27,8 @@
       <tbody>
         <% @posts.each do |post| %>
           <tr>
-            <td><%= post.title %></td>
+            <td><%= link_to post.title, post %></td>
             <td><%= post.description %></td>
-            <td><%= link_to 'Show', post %></td>
             <td><%= link_to 'Edit', edit_post_path(post) %></td>
             <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>

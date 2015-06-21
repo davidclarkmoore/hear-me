@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150620163715) do
+ActiveRecord::Schema.define(version: 20150621042320) do
 
   create_table "exhibits", force: :cascade do |t|
     t.string   "name"
@@ -26,10 +26,14 @@ ActiveRecord::Schema.define(version: 20150620163715) do
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "exhibit_id"
     t.integer  "user_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "posts", ["exhibit_id"], name: "index_posts_on_exhibit_id"

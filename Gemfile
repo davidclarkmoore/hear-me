@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 
 gem 'bootstrap-sass', '~> 3.2.0'
+gem "paperclip", "~> 4.2"
 
 gem 'autoprefixer-rails'
 

@@ -19,10 +19,15 @@ class PostsController < ApplicationController
   def new
     @exhibit = Exhibit.find(params[:exhibit_id])
     @post = Post.new
+    @path = ([@exhibit, @exhibit.posts.build])
   end
 
   # GET /posts/1/edit
   def edit
+    @exhibit = Post.find(params[:id]).exhibit_id
+     @post = Post.find(params[:id])
+    @path = (@post)
+
   end
 
   # POST /posts
@@ -47,9 +52,9 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1.json
   def update
 
-    @exhibit = Exhibit.find(params[:exhibit_id])
-    @post = @exhibit.posts.create(post_params)
-    @post.user_id = current_user.id
+    @exhibit = Post.find(params[:id]).exhibit_id
+    @post = Post.find(params[:id])
+    @post.update(post_params)
 
     respond_to do |format|
       if @post.update(post_params)
@@ -65,9 +70,10 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
+    @exhibit = Post.find(params[:id]).exhibit_id
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.html { redirect_to exhibit_posts_path(@exhibit), notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -80,6 +86,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :description, :exhibit_id, :post_id)
+      params.require(:post).permit(:title, :description, :exhibit_id, :post_id, :image)
     end
 end

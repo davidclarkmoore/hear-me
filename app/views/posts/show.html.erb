@@ -10,5 +10,7 @@
   <%= @post.description %>
 </p>
 
+ <%= image_tag @post.image.url(:medium) %>
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', exhibit_posts_path(@exhibit) %>
