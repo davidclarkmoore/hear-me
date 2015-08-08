@@ -1,6 +1,8 @@
 class ExhibitsController < ApplicationController
   before_action :set_exhibit, only: [:show, :edit, :update, :destroy]
 
+  layout 'admin'
+
   # GET /exhibits
   # GET /exhibits.json
   def index
