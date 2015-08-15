@@ -3,6 +3,10 @@ class AdminController < ApplicationController
   layout 'admin'
 
   def index
+
+    @organizations = Organization.all
+    @exhibits = Exhibit.all
+    
   end
 
   def resource_name

@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :posts
   has_many :exhibits
+  has_many :organizations
   accepts_nested_attributes_for :posts, :exhibits
 
 end

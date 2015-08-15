@@ -26,6 +26,8 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem "paperclip", "~> 4.2"
 
+gem 'simple_form'
+
 gem 'autoprefixer-rails'
 
 # bundle exec rake doc:rails generates the API under doc/api.

@@ -40,6 +40,7 @@ Rails.application.routes.draw do
 
 
   # Example resource route with sub-resources:
+  resources :organizations
     resources :exhibits do
       resources :posts, shallow: true
     end

@@ -12,6 +12,10 @@ class ExhibitsController < ApplicationController
   # GET /exhibits/1
   # GET /exhibits/1.json
   def show
+    @exposts = Post.all
+    @organization = Organization.where(id = 'exhibit_params')
+    render :layout => 'application' 
+
   end
 
   # GET /exhibits/new
@@ -27,6 +31,7 @@ class ExhibitsController < ApplicationController
   # POST /exhibits.json
   def create
     @exhibit = Exhibit.new(exhibit_params)
+    @exhibit.user_id = current_user.id
 
     respond_to do |format|
       if @exhibit.save
@@ -71,6 +76,6 @@ class ExhibitsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def exhibit_params
-      params.require(:exhibit).permit(:name, :description)
+      params.require(:exhibit).permit(:name, :description, :image, :organization_id, :user_id)
     end
 end
