@@ -12,8 +12,10 @@ class ExhibitsController < ApplicationController
   # GET /exhibits/1
   # GET /exhibits/1.json
   def show
-    @exposts = Post.all
-    @organization = Organization.where(id = 'exhibit_params')
+
+    @exhibit = Exhibit.find(params[:id])
+    @exposts = Post.where(exhibit_id: (params[:id]))
+    @organization = Organization.find(@exhibit.organization_id)  
     render :layout => 'application' 
 
   end

@@ -15,8 +15,11 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @exhibit = Post.find(params[:id]).exhibit_id
+
      @post = Post.find(params[:id])
+     post = Post.find(params[:id])
+     @exhibit = Exhibit.find(Post.find(post.id).exhibit_id)
+    @organization = Organization.find(@exhibit.organization_id)
   end
 
   # GET /posts/new
@@ -81,6 +84,7 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
