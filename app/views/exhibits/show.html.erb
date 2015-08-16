@@ -15,14 +15,14 @@
 
 <div class="tilegrid">
 
-<% @exposts.each do |post| %>
-
-	<div class="tile">
-	<h3><%= link_to post.title, post_path(post) %></h3>
-		<%= link_to (image_tag post.image.url(:medium)), post_path(post) %>
-	</div>
-
-<% end %>
+	<% @exposts.each do |post| %>
+		<div class="tile">
+		<h3><%= link_to post.title, post_path(post) %></h3>
+			<% post.images.each do |image| %>
+				<%= image_tag image.photo.url(:medium), :class => "clear" %>
+			<% end %>
+		</div>
+	<% end %>
 
 <div class="clear">
 <h3>About Us</h3>

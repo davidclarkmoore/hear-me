@@ -1,20 +1,19 @@
+<%= simple_form_for @path, :html => { :multipart => true } do |p| %>
+  <%= p.text_field :title %>
+  <%= p.text_area :description %>
 
-<%= form_for @path do |f| %>
+    <%= p.simple_fields_for :images do |ph| %>
+  
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
+    	<% if ph.object.new_record? %>
+      	<p>form</p>
+ 		
+        <%= ph.file_field :photo %>
+        <% else %>
+         <%= image_tag ph.object.send :photo %>
+           <% end %>
+    <% end %>
 
-  <div class="field">
-    <%= f.file_field :image %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
+  <%= p.button :submit %>
 <% end %>
+

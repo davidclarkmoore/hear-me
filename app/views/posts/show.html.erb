@@ -15,8 +15,15 @@
 <p><%= @post.description %></p>	
 
 
-<%= image_tag @post.image.url(:medium), :class => "clear" %>
 
+
+	<% @postimages.each do |image| %>
+
+		<div class="tile">
+		<%= image_tag image.photo.url(:medium), :class => "clear" %>
+		</div>
+
+	<% end %>
 
 <h3>About Us</h3>
 <%= image_tag @organization.image.url(:medium), :class => "left"  %>
@@ -28,6 +35,7 @@
 <% if user_signed_in? %>
 
 	<p id="notice"><%= notice %></p>
-	<%= link_to 'Edit', edit_post_path(@post) %></br>
+	<%= link_to 'Edit', edit_post_path(@post) %> | 
+	<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <% end %>

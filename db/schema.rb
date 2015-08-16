@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150815213035) do
+ActiveRecord::Schema.define(version: 20150816211406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,18 @@ ActiveRecord::Schema.define(version: 20150815213035) do
   add_index "exhibits", ["organization_id"], name: "index_exhibits_on_organization_id", using: :btree
   add_index "exhibits", ["user_id"], name: "index_exhibits_on_user_id", using: :btree
 
+  create_table "images", force: :cascade do |t|
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.integer  "post_id"
+  end
+
+  add_index "images", ["post_id"], name: "index_images_on_post_id", using: :btree
+
   create_table "organizations", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -51,14 +63,10 @@ ActiveRecord::Schema.define(version: 20150815213035) do
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "exhibit_id"
     t.integer  "user_id"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
   end
 
   add_index "posts", ["exhibit_id"], name: "index_posts_on_exhibit_id", using: :btree
@@ -84,6 +92,7 @@ ActiveRecord::Schema.define(version: 20150815213035) do
 
   add_foreign_key "exhibits", "organizations"
   add_foreign_key "exhibits", "users"
+  add_foreign_key "images", "posts"
   add_foreign_key "organizations", "exhibits"
   add_foreign_key "organizations", "users"
   add_foreign_key "posts", "exhibits"
