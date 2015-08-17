@@ -16,14 +16,18 @@
 
 
 
+	<ul class="bxslider">
+		<% @postimages.each do |image| %>
+			<li><%= image_tag image.photo.url(:medium) %></li>
+		<% end %>
+	</ul>
 
-	<% @postimages.each do |image| %>
+	<div id="bx-pager">
+		<% @postimages.each_with_index do |image, index| %>
+	 		<a data-slide-index="<%= index %>" href=""><%= image_tag image.photo.url(:thumb) %></a>
+	 	<% end %>
+	</div>
 
-		<div class="tile">
-		<%= image_tag image.photo.url(:medium), :class => "clear" %>
-		</div>
-
-	<% end %>
 
 <h3>About Us</h3>
 <%= image_tag @organization.image.url(:medium), :class => "left"  %>

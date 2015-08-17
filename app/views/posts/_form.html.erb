@@ -9,9 +9,10 @@
       	<p>form</p>
  		
         <%= ph.file_field :photo %>
+        
         <% else %>
          <%= image_tag ph.object.send :photo %>
-           <% end %>
+           <% end %>	
     <% end %>
 
   <%= p.button :submit %>
