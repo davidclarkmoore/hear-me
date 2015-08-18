@@ -4,7 +4,11 @@
 
 <div class="col-md-8">
 
-<%= link_to 'Back', exhibits_path %>
+
+<div class="btn-group trailer" role="group" aria-label="...">
+  <%= link_to '< To Admin Home', admin_path, :type => "button", :class => "btn btn-default"  %>
+  <%= link_to 'View ' + @exhibit.name + ' Exhibit', exhibit_path(@exhibit.id), :type => "button", :class => "btn btn-default" %>
+</div>
 
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -12,14 +16,16 @@
   </div>
   <div class="panel-body">
 
+
+
   <%= link_to 'New Post', new_exhibit_post_path, :class => "btn btn-success right" %>
-    <h1>Listing Posts</h1>
 
     <table class="table table-striped">
       <thead>
         <tr>
           <th>Title</th>
           <th>Description</th>
+          <th>Actions</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -30,7 +36,7 @@
             <td><%= link_to post.title, post %></td>
             <td><%= post.description %></td>
             <td><%= link_to 'Edit', edit_post_path(post) %></td>
-            <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>

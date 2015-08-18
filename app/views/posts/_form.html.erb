@@ -1,20 +1,22 @@
 <%= simple_form_for @path, :html => { :multipart => true } do |p| %>
-  <%= p.text_field :title %>
-  <%= p.text_area :description %>
+  <div class="form-inputs">
+  <%= p.input :title, label: "Title:", wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' }  %>
+  <%= p.input :description, as: :text, label: "Desc:", wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' }  %>
 
+     <label for="exampleInputFile">Post Image Upload:</label>
     <%= p.simple_fields_for :images do |ph| %>
-  
 
     	<% if ph.object.new_record? %>
-      	<p>form</p>
- 		
+ 	      
         <%= ph.file_field :photo %>
         
         <% else %>
          <%= image_tag ph.object.send :photo %>
            <% end %>	
     <% end %>
-
-  <%= p.button :submit %>
+    </div>
+    <div class="form-actions header">
+  <%= p.button :submit, :class => "btn-success" %>
+  </div>
 <% end %>
 

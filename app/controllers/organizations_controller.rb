@@ -5,20 +5,24 @@ class OrganizationsController < ApplicationController
   # GET /organizations.json
   def index
     @organizations = Organization.all
+        render :layout => 'admin' 
   end
 
   # GET /organizations/1
   # GET /organizations/1.json
   def show
+        render :layout => 'admin' 
   end
 
   # GET /organizations/new
   def new
     @organization = Organization.new
+        render :layout => 'admin' 
   end
 
   # GET /organizations/1/edit
   def edit
+        render :layout => 'admin' 
   end
 
   # POST /organizations

@@ -1,4 +1,6 @@
-<%= link_to '< ' + @exhibit.name, exhibit_path(@exhibit), :class => "left"  %>
+<% if user_signed_in? %>
+<%= link_to '< ' + @exhibit.name + ' post list', exhibit_posts_path(@exhibit), :class => "left"  %>
+<% end %>
 
 <div class="nav-links">
 <%= link_to 'Pin it', "http://pinterest.com/pin/create/button/?url=" + request.original_url + "&amp;description=Check+out+the+hear+me+exhibit..." %> 
@@ -10,15 +12,15 @@
 	<%= link_to (image_tag @exhibit.image.url(:medium)), exhibit_posts_path(@exhibit) %>
 </div>
 
-<h1><%= @exhibit.name %></h1>
-<h3><%= @exhibit.description %></h3>
+<h2><%= @exhibit.name %></h2>
+<p><%= @exhibit.description %></p>
 
 <div class="tilegrid">
 
 	<% @exposts.each do |post| %>
 		<div class="tile">
-		<h3><%= link_to post.title, post_path(post) %></h3>
-			<% post.images.each do |image| %>
+		<h3 ><%= link_to post.title, post_path(post), :class => "truncate" %></h3>
+			<% post.images.limit(1).each do |image| %>
 				<%= image_tag image.photo.url(:medium), :class => "clear" %>
 			<% end %>
 		</div>
@@ -32,11 +34,12 @@
 <p><%= @organization.description %></p>
 </div>
 
-
+<div class="clear">
 <% if user_signed_in? %>
 	<p id="notice"><%= notice %></p>
 	<%= link_to 'Back', exhibits_path %> |
 	<%= link_to 'Edit', edit_exhibit_path(@exhibit) %>
 <% end %>
+</div>
 
 

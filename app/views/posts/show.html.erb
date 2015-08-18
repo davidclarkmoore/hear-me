@@ -15,6 +15,7 @@
 <p><%= @post.description %></p>	
 
 
+<div class="col-md-8">
 
 	<ul class="bxslider">
 		<% @postimages.each do |image| %>
@@ -22,20 +23,22 @@
 		<% end %>
 	</ul>
 
+</div>
+<div>
 	<div id="bx-pager">
 		<% @postimages.each_with_index do |image, index| %>
 	 		<a data-slide-index="<%= index %>" href=""><%= image_tag image.photo.url(:thumb) %></a>
 	 	<% end %>
-	</div>
+</div>
 
-
+<div class="clear header">
 <h3>About Us</h3>
 <%= image_tag @organization.image.url(:medium), :class => "left"  %>
 <label><%= @organization.name %></label>
 <p><%= @organization.description %></p>
+</div>
 
-
-
+<div class="clear header">
 <% if user_signed_in? %>
 
 	<p id="notice"><%= notice %></p>
@@ -43,3 +46,4 @@
 	<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <% end %>
+</div>

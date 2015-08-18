@@ -4,6 +4,7 @@
     <tr>
       <th>Name</th>
       <th>Description</th>
+      <th>Logo Image</th>
       <th>Org Actions</th>
     </tr>
   </thead>
@@ -11,8 +12,9 @@
   <tbody>
     <% @organizations.each do |organization| %>
       <tr>
-        <td><%= link_to organization.name, organization_path(organization) %></td>
+        <td><%= organization.name %></td>
         <td><%= organization.description %></td>
+        <td> <%= image_tag organization.image.url(:thumb) %></td>
 
         <td><%= link_to 'Edit', edit_organization_path(organization) %> | <%= link_to 'Delete', organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

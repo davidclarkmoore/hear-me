@@ -31,6 +31,7 @@ class PostsController < ApplicationController
     @path = ([@exhibit, @post])
     3.times {@post.images.build}
   
+      render :layout => 'admin' 
 
     # 3.times { @post.images.build } # ... and this
   end
@@ -41,7 +42,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @path = (@post)
 
-
+    render :layout => 'admin' 
     # 3.times { @post.images.build } # ... and this
 
   end

@@ -10,9 +10,16 @@
       </ul>
     </div>
   <% end %>
-  <%= f.input :name, label: 'Name:', error: 'Whoops! We need a name here :)' %>
-  <%= f.input :description, label: 'Description:', error: 'Whoops! We need a description here :)' %>
-  <%= f.association :organization %>
-  <%= f.file_field :image, label: 'Logo Image:', error: 'Whoops! We need an image here :)' %>
-  <%= f.button :submit %>
+  <%= f.input :name, label: 'Name:', error: 'Whoops! We need a name here :)', wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
+  <%= f.input :description, label: 'Description:', error: 'Whoops! We need a description here :)', wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
+  <%= f.association :organization, wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
+
+  <p class="help-block">If the organization you're looking for is not availbale, please create one before creating or updating your Exhibit | <%= link_to 'Create Organization',new_organization_path, :class => "btn btn-default"  %></p> 
+
+  <label for="exampleInputFile">Exhibit Header Image Upload:</label>
+  <%= f.file_field :image, inline_label: 'Logo Image:', error: 'Whoops! We need an image here :)', :class => "trailer" %>
+
+ 
+  <%= f.button :submit, :class => "btn-success" %>
+
 <% end %>
