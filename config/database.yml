@@ -35,5 +35,5 @@ production:
   adapter: postgresql
   encoding: utf8
   database: hear_me_production
-  username: ENV['HEARME_DATABASE_USER']
-  password: ENV['HEARME_DATABASE_PASSWORD']
+  username: <%= ENV['HEARME_DATABASE_USER'] %>
+  password: <%= ENV['HEARME_DATABASE_PASSWORD'] %>
