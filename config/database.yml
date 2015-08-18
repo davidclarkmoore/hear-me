@@ -26,6 +26,7 @@
 
 development:
   adapter: postgresql
+  host: localhost
   encoding: utf8
   database: hear_me_development
   username: hearme
@@ -33,7 +34,9 @@ development:
 
 production:
   adapter: postgresql
+  host: localhost
   encoding: utf8
+  pool: 5
   database: hear_me_production
   username: <%= ENV['HEARME_DATABASE_USER'] %>
   password: <%= ENV['HEARME_DATABASE_PASSWORD'] %>
