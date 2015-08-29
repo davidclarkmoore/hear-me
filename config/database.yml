@@ -24,6 +24,16 @@
 #   <<: *default
 #   database: db/production.sqlite3
 
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+  host: localhost
+  username: rails
+  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
+
 development:
   adapter: postgresql
   host: localhost
@@ -33,10 +43,7 @@ development:
   password: password1
 
 production:
-  adapter: postgresql
-  host: localhost
-  encoding: utf8
-  pool: 5
-  database: hear_me_production
-  username: <%= ENV['HEARME_DATABASE_USER'] %>
-  password: <%= ENV['HEARME_DATABASE_PASSWORD'] %>
+  <<: *default
+  database: app_production
+  username: rails
+  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
