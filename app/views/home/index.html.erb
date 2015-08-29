@@ -1,5 +1,10 @@
 
 <% if user_signed_in? %>
+
+<div class="alert alert-info" role="alert"><strong>Welcome!</strong> Feel free to proceed to the <%= link_to 'admin page', admin_path %> </div>
+
+<% else %>
+
 <div class="alert alert-info" role="alert"><strong>Welcome!</strong>If you're and admin on the account, please sign-in to the <%= link_to 'admin page', admin_path %> </div>
 <% end %>
 
