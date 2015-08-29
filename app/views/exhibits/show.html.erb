@@ -26,12 +26,15 @@
 		</div>
 	<% end %>
 
-<div class="clear">
-<h3>About Us</h3>
+<hr>
 
-<%= image_tag @organization.image.url(:medium), :class => "left"  %>
-<label><%= @organization.name %></label>
+<div class="clear header">
+<h3>About Us</h3>
+<div class="small-header tailer">
+<%= image_tag @organization.image.url(:thumb), :class => "left margin-r"  %>
+<h2 class="margin-clear"><%= @organization.name %></h2>
 <p><%= @organization.description %></p>
+</div>
 </div>
 
 <div class="clear">
