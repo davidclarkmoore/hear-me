@@ -2,15 +2,14 @@
 
 
 <div class="tilegrid">
-<% @homeposts.each do |post| %>
 
-
-	<div class="tile">
-		<%= link_to (image_tag post.image.url(:medium)), post_path(post) %>
-		<h3><%= link_to post.title, post_path(post) %></h3>
-	</div>
-
-
-<% end %>
+	<% @homeposts.each do |post| %>
+		<div class="tile">
+		<h3 ><%= link_to post.title, post_path(post), :class => "truncate" %></h3>
+			<% post.images.limit(1).each do |image| %>
+				<%= image_tag image.photo.url(:medium), :class => "clear" %>
+			<% end %>
+		</div>
+	<% end %>
 
 </div>
