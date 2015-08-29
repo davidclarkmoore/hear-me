@@ -2,11 +2,11 @@
 
 @font-face {
     font-family: 'OpenSansLight';
-    src: url('OpenSans-Light-webfont.eot');
-    src: url('OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('OpenSans-Light-webfont.woff') format('woff'),
-         url('OpenSans-Light-webfont.ttf') format('truetype'),
-         url('OpenSans-Light-webfont.svg#OpenSansLight') format('svg');
+    src: font-url('OpenSans-Light-webfont.eot');
+    src: font-url('OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('OpenSans-Light-webfont.woff') format('woff'),
+         font-url('OpenSans-Light-webfont.ttf') format('truetype'),
+         font-url('OpenSans-Light-webfont.svg#OpenSansLight') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -14,11 +14,11 @@
 
 @font-face {
     font-family: 'OpenSansLightItalic';
-    src: url('OpenSans-LightItalic-webfont.eot');
-    src: url('OpenSans-LightItalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('OpenSans-LightItalic-webfont.woff') format('woff'),
-         url('OpenSans-LightItalic-webfont.ttf') format('truetype'),
-         url('OpenSans-LightItalic-webfont.svg#OpenSansLightItalic') format('svg');
+    src: font-url('OpenSans-LightItalic-webfont.eot');
+    src: font-url('OpenSans-LightItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('OpenSans-LightItalic-webfont.woff') format('woff'),
+         font-url('OpenSans-LightItalic-webfont.ttf') format('truetype'),
+         font-url('OpenSans-LightItalic-webfont.svg#OpenSansLightItalic') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -26,11 +26,11 @@
 
 @font-face {
     font-family: 'OpenSansRegular';
-    src: url('OpenSans-Regular-webfont.eot');
-    src: url('OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('OpenSans-Regular-webfont.woff') format('woff'),
-         url('OpenSans-Regular-webfont.ttf') format('truetype'),
-         url('OpenSans-Regular-webfont.svg#OpenSansRegular') format('svg');
+    src: font-url('OpenSans-Regular-webfont.eot');
+    src: font-url('OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('OpenSans-Regular-webfont.woff') format('woff'),
+         font-url('OpenSans-Regular-webfont.ttf') format('truetype'),
+         font-url('OpenSans-Regular-webfont.svg#OpenSansRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -38,11 +38,11 @@
 
 @font-face {
     font-family: 'OpenSansItalic';
-    src: url('OpenSans-Italic-webfont.eot');
-    src: url('OpenSans-Italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('OpenSans-Italic-webfont.woff') format('woff'),
-         url('OpenSans-Italic-webfont.ttf') format('truetype'),
-         url('OpenSans-Italic-webfont.svg#OpenSansItalic') format('svg');
+    src: font-url('OpenSans-Italic-webfont.eot');
+    src: font-url('OpenSans-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('OpenSans-Italic-webfont.woff') format('woff'),
+         font-url('OpenSans-Italic-webfont.ttf') format('truetype'),
+         font-url('OpenSans-Italic-webfont.svg#OpenSansItalic') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -50,11 +50,11 @@
 
 @font-face {
     font-family: 'OpenSansSemibold';
-    src: url('OpenSans-Semibold-webfont.eot');
-    src: url('OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('OpenSans-Semibold-webfont.woff') format('woff'),
-         url('OpenSans-Semibold-webfont.ttf') format('truetype'),
-         url('OpenSans-Semibold-webfont.svg#OpenSansSemibold') format('svg');
+    src: font-url('OpenSans-Semibold-webfont.eot');
+    src: font-url('OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('OpenSans-Semibold-webfont.woff') format('woff'),
+         font-url('OpenSans-Semibold-webfont.ttf') format('truetype'),
+         font-url('OpenSans-Semibold-webfont.svg#OpenSansSemibold') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -62,11 +62,11 @@
 
 @font-face {
     font-family: 'OpenSansSemiboldItalic';
-    src: url('OpenSans-SemiboldItalic-webfont.eot');
-    src: url('OpenSans-SemiboldItalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('OpenSans-SemiboldItalic-webfont.woff') format('woff'),
-         url('OpenSans-SemiboldItalic-webfont.ttf') format('truetype'),
-         url('OpenSans-SemiboldItalic-webfont.svg#OpenSansSemiboldItalic') format('svg');
+    src: font-url('OpenSans-SemiboldItalic-webfont.eot');
+    src: font-url('OpenSans-SemiboldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('OpenSans-SemiboldItalic-webfont.woff') format('woff'),
+         font-url('OpenSans-SemiboldItalic-webfont.ttf') format('truetype'),
+         font-url('OpenSans-SemiboldItalic-webfont.svg#OpenSansSemiboldItalic') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -74,11 +74,11 @@
 
 @font-face {
     font-family: 'OpenSansBold';
-    src: url('OpenSans-Bold-webfont.eot');
-    src: url('OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('OpenSans-Bold-webfont.woff') format('woff'),
-         url('OpenSans-Bold-webfont.ttf') format('truetype'),
-         url('OpenSans-Bold-webfont.svg#OpenSansBold') format('svg');
+    src: font-url('OpenSans-Bold-webfont.eot');
+    src: font-url('OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('OpenSans-Bold-webfont.woff') format('woff'),
+         font-url('OpenSans-Bold-webfont.ttf') format('truetype'),
+         font-url('OpenSans-Bold-webfont.svg#OpenSansBold') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -86,11 +86,11 @@
 
 @font-face {
     font-family: 'OpenSansBoldItalic';
-    src: url('OpenSans-BoldItalic-webfont.eot');
-    src: url('OpenSans-BoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('OpenSans-BoldItalic-webfont.woff') format('woff'),
-         url('OpenSans-BoldItalic-webfont.ttf') format('truetype'),
-         url('OpenSans-BoldItalic-webfont.svg#OpenSansBoldItalic') format('svg');
+    src: font-url('OpenSans-BoldItalic-webfont.eot');
+    src: font-url('OpenSans-BoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('OpenSans-BoldItalic-webfont.woff') format('woff'),
+         font-url('OpenSans-BoldItalic-webfont.ttf') format('truetype'),
+         font-url('OpenSans-BoldItalic-webfont.svg#OpenSansBoldItalic') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -98,11 +98,11 @@
 
 @font-face {
     font-family: 'OpenSansExtrabold';
-    src: url('OpenSans-ExtraBold-webfont.eot');
-    src: url('OpenSans-ExtraBold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('OpenSans-ExtraBold-webfont.woff') format('woff'),
-         url('OpenSans-ExtraBold-webfont.ttf') format('truetype'),
-         url('OpenSans-ExtraBold-webfont.svg#OpenSansExtrabold') format('svg');
+    src: font-url('OpenSans-ExtraBold-webfont.eot');
+    src: font-url('OpenSans-ExtraBold-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('OpenSans-ExtraBold-webfont.woff') format('woff'),
+         font-url('OpenSans-ExtraBold-webfont.ttf') format('truetype'),
+         font-url('OpenSans-ExtraBold-webfont.svg#OpenSansExtrabold') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -110,11 +110,11 @@
 
 @font-face {
     font-family: 'OpenSansExtraboldItalic';
-    src: url('OpenSans-ExtraBoldItalic-webfont.eot');
-    src: url('OpenSans-ExtraBoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('OpenSans-ExtraBoldItalic-webfont.woff') format('woff'),
-         url('OpenSans-ExtraBoldItalic-webfont.ttf') format('truetype'),
-         url('OpenSans-ExtraBoldItalic-webfont.svg#OpenSansExtraboldItalic') format('svg');
+    src: font-url('OpenSans-ExtraBoldItalic-webfont.eot');
+    src: font-url('OpenSans-ExtraBoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('OpenSans-ExtraBoldItalic-webfont.woff') format('woff'),
+         font-url('OpenSans-ExtraBoldItalic-webfont.ttf') format('truetype'),
+         font-url('OpenSans-ExtraBoldItalic-webfont.svg#OpenSansExtraboldItalic') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -123,11 +123,11 @@
 
 @font-face {
     font-family: 'arvil_sansregular';
-    src: url('arvil_sans-webfont.eot');
-    src: url('arvil_sans-webfont.eot?#iefix') format('embedded-opentype'),
-         url('arvil_sans-webfont.woff') format('woff'),
-         url('arvil_sans-webfont.ttf') format('truetype'),
-         url('arvil_sans-webfont.svg#arvil_sansregular') format('svg');
+    src: font-url('arvil_sans-webfont.eot');
+    src: font-url('arvil_sans-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('arvil_sans-webfont.woff') format('woff'),
+         font-url('arvil_sans-webfont.ttf') format('truetype'),
+         font-url('arvil_sans-webfont.svg#arvil_sansregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
