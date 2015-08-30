@@ -9,7 +9,7 @@
 </div>
 
 <div class="center homelogo">
-	<%= link_to (image_tag @exhibit.image.url(:medium)), exhibit_posts_path(@exhibit) %>
+	<%= link_to (image_tag @exhibit.image.url(:medium)), exhibit_path(@exhibit) %>
 </div>
 
 <h2><%= @exhibit.name %></h2>
