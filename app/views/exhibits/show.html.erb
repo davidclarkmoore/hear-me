@@ -1,46 +1,60 @@
-<% if user_signed_in? %>
-<%= link_to '< ' + @exhibit.name + ' post list', exhibit_posts_path(@exhibit), :class => "left"  %>
-<% end %>
+<div class="col-md-12">
 
-<div class="nav-links">
-<%= link_to 'Pin it', "http://pinterest.com/pin/create/button/?url=" + request.original_url + "&amp;description=Check+out+the+hear+me+exhibit..." %> 
-<%= link_to 'Tweet it', "http://twitter.com/share?url=" + request.original_url + "&amp;text=Check+out+Hear+Me:+Your+story+through+tattoos...&amp;hashtags=#hearme" %> 
-<%= link_to 'Share on FB', "http://www.facebook.com/share.php?u=" + request.original_url %>
-</div>
-
-<div class="center homelogo">
-	<%= link_to (image_tag @exhibit.image.url(:medium)), exhibit_path(@exhibit) %>
-</div>
-
-<h2><%= @exhibit.name %></h2>
-<p><%= @exhibit.description %></p>
-
-<div class="tilegrid">
-
-	<% @exposts.each do |post| %>
-		<div class="tile">
-		<h3 ><%= link_to post.title, post_path(post), :class => "truncate" %></h3>
-			<% post.images.limit(1).each do |image| %>
-				<%= link_to (image_tag image.photo.url(:medium), :class => "clear"), post_path(post) %>
-			<% end %>
-		</div>
+	<% if user_signed_in? %>
+	<%= link_to '< ' + @exhibit.name + ' post list', exhibit_posts_path(@exhibit), :class => "left"  %>
 	<% end %>
 
-<div class="clear header">
-<h3>About Us</h3>
-<div class="small-header tailer">
-<%= image_tag @organization.image.url(:thumb), :class => "left margin-r"  %>
-<h2 class="margin-clear"><%= @organization.name %></h2>
-<p><%= @organization.description %></p>
-</div>
+	<div class="nav-links">
+		<%= link_to 'Pin it', "http://pinterest.com/pin/create/button/?url=" + request.original_url + "&amp;description=Check+out+the+hear+me+exhibit..." %> 
+		<%= link_to 'Tweet it', "http://twitter.com/share?url=" + request.original_url + "&amp;text=Check+out+Hear+Me:+Your+story+through+tattoos...&amp;hashtags=#hearme" %> 
+		<%= link_to 'Share on FB', "http://www.facebook.com/share.php?u=" + request.original_url %>
+	</div>
+
+	<div class="center homelogo">
+		<%= link_to (image_tag @exhibit.image.url(:medium)), exhibit_path(@exhibit) %>
+	</div>
+
 </div>
 
-<div class="clear">
-<% if user_signed_in? %>
-	<p id="notice"><%= notice %></p>
-	<%= link_to 'Back', exhibits_path %> |
-	<%= link_to 'Edit', edit_exhibit_path(@exhibit) %>
-<% end %>
+<div class="col-md-12">
+
+	<h2><%= @exhibit.name %></h2>
+	<p><%= @exhibit.description %></p>
+
+</div>
+
+<div class="col-md-12">
+	<div class="tilegrid">
+		<% @exposts.each do |post| %>
+			<div class="tile">
+				<h3 ><%= link_to post.title, post_path(post), :class => "truncate" %></h3>
+				<% post.images.limit(1).each do |image| %>
+				<%= link_to (image_tag image.photo.url(:medium), :class => "clear"), post_path(post) %>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
+</div>	
+
+<div class="col-md-12">
+	<div class="clear header">
+		<h3>About Us</h3>
+		<div class="small-header tailer">
+			<%= image_tag @organization.image.url(:thumb), :class => "left margin-r"  %>
+			<h2 class="margin-clear"><%= @organization.name %></h2>
+			<p><%= @organization.description %></p>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-12">
+	<div class="clear">
+		<% if user_signed_in? %>
+			<p id="notice"><%= notice %></p>
+			<%= link_to 'Back', exhibits_path %> |
+			<%= link_to 'Edit', edit_exhibit_path(@exhibit) %>
+		<% end %>
+	</div>
 </div>
 
 
