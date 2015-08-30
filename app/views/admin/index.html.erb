@@ -48,7 +48,10 @@
 			<div class="alert alert-info admin" role="alert"><strong>You must have admin credentials to sign-up</strong> Please reach out to the site administrator to approve your admin status.</div> 
 	</div>
 
-	<% else %>
+	
+<% end %>
+
+<% if !user_signed_in? %>
 
 	<div class="col-md-4 col-md-offset-4">
 
