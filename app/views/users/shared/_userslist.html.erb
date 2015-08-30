@@ -1,0 +1,29 @@
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Admin Status</th>
+      <th>Last Sign In At</th>
+      <th>User Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.admin %></td>
+        <td><%= user.last_sign_in_at %></td>
+        <td>
+          <div class="btn-group admin" role="group" aria-label="...">
+            <%= link_to 'Make Admin', make_admin_user_path(user), :method => :put, :type => "button", :class => "btn btn-default" %>
+               <%= link_to 'Delete', user, :type => "button", :class => "btn btn-danger", method: :delete, data: { confirm: 'Are you sure you want to delete ' + user.email + '?' } %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>
+

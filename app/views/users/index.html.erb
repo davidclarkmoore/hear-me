@@ -1,0 +1,20 @@
+<% if current_user.try(:admin?) %>
+
+<div class="col-md-12">
+
+<div class="panel panel-default">
+<div class="panel-heading">
+  <h3 class="panel-title">users</h3>
+</div>
+<div class="panel-body">
+  <%= render 'users/shared/userslist' %>
+</div>
+</div>
+</div>
+
+<% else %>
+
+<div class="col-md-12">
+		<div class="alert alert-danger admin" role="alert"><strong>Whoops! You're not an admin user</strong> Please contact the site administrator to upgrade your credentials</div>
+</div>
+<% end %>

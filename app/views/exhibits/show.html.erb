@@ -1,4 +1,4 @@
-<% if user_signed_in? %>
+<% if current_user.try(:admin?) %>
 	<div class="col-md-12">
 		<div class="alert alert-info admin" role="alert"><strong>Admin Actions:</strong> These functions are only available to site admins.  
 

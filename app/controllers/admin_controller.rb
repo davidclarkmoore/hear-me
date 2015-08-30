@@ -6,6 +6,7 @@ class AdminController < ApplicationController
 
     @organizations = Organization.all
     @exhibits = Exhibit.all
+    @users = User.all
     
   end
 
@@ -20,5 +21,7 @@ class AdminController < ApplicationController
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
+
+  
 
 end

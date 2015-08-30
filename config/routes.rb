@@ -45,6 +45,12 @@ Rails.application.routes.draw do
       resources :posts, shallow: true
     end
 
+  resources :users do
+    member do
+      put :make_admin
+    end
+  end
+
 
   #   end
 
