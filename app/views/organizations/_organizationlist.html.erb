@@ -16,7 +16,13 @@
         <td><%= organization.description %></td>
         <td> <%= image_tag organization.image.url(:thumb) %></td>
 
-        <td><%= link_to 'Edit', edit_organization_path(organization) %> | <%= link_to 'Delete', organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <div class="btn-group trailer" role="group" aria-label="...">
+            <%= link_to 'Edit', edit_organization_path(organization), :type => "button", :class => "btn btn-warning" %>
+            <%= link_to 'Delete', organization, :type => "button", :class => "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </td>
+
       </tr>
     <% end %>
   </tbody>

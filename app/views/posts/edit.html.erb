@@ -1,10 +1,19 @@
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', exhibit_posts_path(@exhibit) %> | 
-<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
 
-<h1>Editing Posts</h1>
 
-<%= render 'form' %>
+<div class="col-md-12">
+
+	<div class="btn-group trailer" role="group" aria-label="...">
+		<%= link_to 'Visit Post', @post, :type => "button", :class => "btn btn-default" %> 
+		<%= link_to 'Exhibit Posts', exhibit_posts_path(@exhibit), :type => "button", :class => "btn btn-default" %>
+		<%= link_to 'Delete', @post, :type => "button", :class => "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+	</div>
+
+
+	<h1>Editing Posts</h1>
+
+	<%= render 'form' %>
+
+</div>
 
 
 

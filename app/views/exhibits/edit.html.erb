@@ -1,7 +1,14 @@
-<%= link_to 'Show', @exhibit %> |
-<%= link_to 'Back', exhibits_path %>
+<div class="col-md-12">
+	<div class="btn-group" role="group" aria-label="...">
+	 	 <%= link_to '< To Admin Home', admin_path, :type => "button", :class => "btn btn-default"  %>
+		<%= link_to @exhibit.name + ' Exhibit Posts', exhibit_posts_path(@exhibit), :type => "button", :class => "btn btn-default" %> 
+		<%= link_to 'Destroy Exhibit', @post, :type => "button", :class => "btn btn-danger", method: :delete, data: { confirm: 'Are really really sure?' } %>
+	</div>
+
+
 <h1>Editing Exhibit</h1>
 
 <%= render 'form' %>
 
+</div>
 

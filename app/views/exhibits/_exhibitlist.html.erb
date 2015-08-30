@@ -5,6 +5,7 @@
       <th>Name</th>
       <th>Organization</th>
       <th>Description</th>
+      <th>Exhibit Logo</th>
       <th>Exhibit Actions</th>
     </tr>
   </thead>
@@ -15,8 +16,17 @@
         <td><%= link_to exhibit.name, exhibit_posts_path(exhibit) %></td>
         <td><%= exhibit.organization.name %></td>
         <td><%= exhibit.description %></td>
+        <td><%= image_tag exhibit.image.url(:thumb) %></td>
 
-        <td><%= link_to 'Edit', edit_exhibit_path(exhibit) %> | <%= link_to 'Delete', exhibit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <div class="btn-group trailer" role="group" aria-label="...">
+            <%= link_to exhibit.name + ' Admin', exhibit_posts_path(exhibit), :type => "button", :class => "btn btn-default" %> 
+            <%= link_to exhibit.name + ' Public Site', exhibit_path(exhibit), :type => "button", :class => "btn btn-default" %>
+            <%= link_to 'Edit', edit_exhibit_path(exhibit), :type => "button", :class => "btn btn-warning" %>
+            <%= link_to 'Delete', exhibit, :type => "button", :class => "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </td>
+
       </tr>
     <% end %>
   </tbody>

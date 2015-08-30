@@ -1,6 +1,27 @@
+<% if user_signed_in? %>
+	<div class="col-md-12">
+		<div class="alert alert-info admin" role="alert"><strong>Admin Actions:</strong> These functions are only available to site admins.  
+
+			<div class="btn-group" role="group" aria-label="...">
+
+				<%= link_to @exhibit.name + ' Exhibit', exhibit_path(@exhibit), :type => "button", :class => "btn btn-default"  %>
+				<%= link_to @exhibit.name + ' Exhibit Admin', exhibit_posts_path(@exhibit), :type => "button", :class => "btn btn-default"  %>
+				<%= link_to 'Edit Post', edit_post_path(@post), :type => "button", :class => "btn btn-warning" %> 
+				<%= link_to 'Destroy Post', @post, :type => "button", :class => "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+			</div>
+
+			<p id="notice"><%= notice %></p>
+
+		</div>
+	</div>
+
+<% else %>
+<% end %>
+
+
+
 <div class="col-md-12">
 
-	<%= link_to '< ' + @exhibit.name, exhibit_path(@exhibit), :class => "left"  %>
 
 	<div class="nav-links">
 		<%= link_to 'Pin it', "http://pinterest.com/pin/create/button/?url=" + request.original_url + "&amp;description=Check+out+the+hear+me+exhibit..." %> 
@@ -51,15 +72,3 @@
 	</div>
 </div>
 
-
-<div class="col-md-12">
-	<div class="clear header">
-		<% if user_signed_in? %>
-
-			<p id="notice"><%= notice %></p>
-			<%= link_to 'Edit', edit_post_path(@post) %> | 
-			<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
-
-		<% end %>
-	</div>
-</div>

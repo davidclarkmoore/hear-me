@@ -1,26 +1,33 @@
-
 <% if user_signed_in? %>
+	<div class="col-md-12">
+		<div class="alert alert-info admin" role="alert"><strong>Admin Actions:</strong> Feel free to proceed to  
 
-<div class="alert alert-info" role="alert"><strong>Welcome!</strong> Feel free to proceed to the <%= link_to 'admin page', admin_path %> </div>
+			<div class="btn-group" role="group" aria-label="...">
 
+				<%= link_to 'Admin Home', admin_path, :type => "button", :class => "btn btn-default"  %>
+			</div>
+
+			<p id="notice"><%= notice %></p>
+
+		</div>
+	</div>
 <% else %>
 <% end %>
 
+
 <div class="nav-links">
-<%= link_to 'Pin it', "http://pinterest.com/pin/create/button/?url=" + request.original_url + "&amp;description=Check+out+the+hear+me+exhibit..." %> 
-<%= link_to 'Tweet it', "http://twitter.com/share?url=" + request.original_url + "&amp;text=Check+out+Hear+Me:+Your+story+through+tattoos...&amp;hashtags=#hearme" %> 
-<%= link_to 'Share on FB', "http://www.facebook.com/share.php?u=" + request.original_url %>
+	<%= link_to 'Pin it', "http://pinterest.com/pin/create/button/?url=" + request.original_url + "&amp;description=Check+out+the+hear+me+exhibit..." %> 
+	<%= link_to 'Tweet it', "http://twitter.com/share?url=" + request.original_url + "&amp;text=Check+out+Hear+Me:+Your+story+through+tattoos...&amp;hashtags=#hearme" %> 
+	<%= link_to 'Share on FB', "http://www.facebook.com/share.php?u=" + request.original_url %>
 </div>
 
 
 
-<div class="col-md-6 col-md-offset-3">
-
+<div class="col-md-4 col-md-offset-4">
 	<% @homeexhibits.each do |exhibit| %>
-		
-<!-- 		<h3 ><%= link_to exhibit.name, exhibit_posts_path(exhibit), :class => "truncate" %></h3>
- -->		<%= link_to (image_tag exhibit.image.url(:medium), :class => "wide" ), exhibit_path(exhibit) %>
-	
+		<div class="text-center">
+			<%= link_to (image_tag exhibit.image.url(:medium), :class => "wide" ), exhibit_path(exhibit) %>
+			<%= link_to "Visit Exhibit", exhibit_path(exhibit) %>
+		</div>
 	<% end %>
-
 </div>

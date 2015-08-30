@@ -1,8 +1,23 @@
-<div class="col-md-12">
+<% if user_signed_in? %>
+	<div class="col-md-12">
+		<div class="alert alert-info admin" role="alert"><strong>Admin Actions:</strong> These functions are only available to site admins.  
 
-	<% if user_signed_in? %>
-	<%= link_to '< ' + @exhibit.name + ' post list', exhibit_posts_path(@exhibit), :class => "left"  %>
-	<% end %>
+			<div class="btn-group" role="group" aria-label="...">
+
+				<%= link_to @exhibit.name + ' Exhibit Admin', exhibit_posts_path(@exhibit), :type => "button", :class => "btn btn-default"  %>
+				<%= link_to 'Edit Exhibit', edit_exhibit_path(@exhibit), :type => "button", :class => "btn btn-warning" %> 
+			</div>
+
+			<p id="notice"><%= notice %></p>
+
+		</div>
+	</div>
+
+<% else %>
+<% end %>
+
+
+<div class="col-md-12">
 
 	<div class="nav-links">
 		<%= link_to 'Pin it', "http://pinterest.com/pin/create/button/?url=" + request.original_url + "&amp;description=Check+out+the+hear+me+exhibit..." %> 
@@ -44,16 +59,6 @@
 			<h2 class="margin-clear"><%= @organization.name %></h2>
 			<p><%= @organization.description %></p>
 		</div>
-	</div>
-</div>
-
-<div class="col-md-12">
-	<div class="clear">
-		<% if user_signed_in? %>
-			<p id="notice"><%= notice %></p>
-			<%= link_to 'Back', exhibits_path %> |
-			<%= link_to 'Edit', edit_exhibit_path(@exhibit) %>
-		<% end %>
 	</div>
 </div>
 
