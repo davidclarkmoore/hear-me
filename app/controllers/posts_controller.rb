@@ -6,8 +6,8 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
 
-    @posts = Post.where("exhibit_id = ?", Exhibit.find(params[:exhibit_id]))
-    @exhibit = Exhibit.find(params[:exhibit_id])
+    @posts = Post.where("exhibit_id = ?", Exhibit.friendly.find(params[:exhibit_id]))
+    @exhibit = Exhibit.friendly.find(params[:exhibit_id])
 
     render :layout => 'admin' 
   end
@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 
      @post = Post.find(params[:id])
      post = Post.find(params[:id])
-     @exhibit = Exhibit.find(Post.find(post.id).exhibit_id)
+     @exhibit = Exhibit.friendly.find(Post.find(post.id).exhibit_id)
     @organization = Organization.find(@exhibit.organization_id)
     @postimages = Image.where(post_id: (params[:id]))
   end
@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
   
-    @exhibit = Exhibit.find(params[:exhibit_id])
+    @exhibit = Exhibit.friendly.find(params[:exhibit_id])
     @post = Post.new
     @path = ([@exhibit, @post])
     3.times {@post.images.build}
@@ -50,7 +50,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @exhibit = Exhibit.find(params[:exhibit_id])
+    @exhibit = Exhibit.friendly.find(params[:exhibit_id])
     @post = @exhibit.posts.new(post_params)
     @post.user_id = current_user.id
 

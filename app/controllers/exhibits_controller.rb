@@ -13,8 +13,8 @@ class ExhibitsController < ApplicationController
   # GET /exhibits/1.json
   def show
 
-    @exhibit = Exhibit.find(params[:id])
-    @exposts = Post.where(exhibit_id: (params[:id]))
+    @exhibit = Exhibit.friendly.find(params[:id])
+    @exposts = @exhibit.posts.all
     @organization = Organization.find(@exhibit.organization_id)  
     render :layout => 'application' 
 
@@ -73,11 +73,11 @@ class ExhibitsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_exhibit
-      @exhibit = Exhibit.find(params[:id])
+      @exhibit = Exhibit.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def exhibit_params
-      params.require(:exhibit).permit(:name, :description, :image, :organization_id, :user_id)
+      params.require(:exhibit).permit(:name, :description, :image, :organization_id, :user_id, :slug)
     end
 end

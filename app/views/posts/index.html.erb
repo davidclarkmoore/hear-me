@@ -7,7 +7,7 @@
 
 <div class="btn-group trailer" role="group" aria-label="...">
   <%= link_to '< To Admin Home', admin_path, :type => "button", :class => "btn btn-default"  %>
-  <%= link_to @exhibit.name + ' Public Site', exhibit_path(@exhibit.id), :type => "button", :class => "btn btn-default" %>
+  <%= link_to @exhibit.name + ' Public Site', exhibit_path(@exhibit), :type => "button", :class => "btn btn-default" %>
   <%= link_to 'Edit Exhibit', edit_exhibit_path(@exhibit.id), :type => "button", :class => "btn btn-warning" %>
 </div>
 
