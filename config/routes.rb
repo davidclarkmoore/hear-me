@@ -43,6 +43,10 @@ Rails.application.routes.draw do
   resources :organizations
     resources :exhibits do
       resources :posts, shallow: true
+
+      member do
+        put :regenerate_slug
+      end
     end
 
   resources :users do

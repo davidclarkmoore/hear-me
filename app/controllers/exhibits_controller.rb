@@ -70,6 +70,17 @@ class ExhibitsController < ApplicationController
     end
   end
 
+
+  def regenerate_slug
+
+    @exhibittoregen = Exhibit.find(params[:id])
+    @exhibittoregen.slug = nil
+    @exhibittoregen.save!
+
+    redirect_to edit_exhibit_path(@exhibittoregen)
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_exhibit

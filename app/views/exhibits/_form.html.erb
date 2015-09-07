@@ -11,6 +11,9 @@
     </div>
   <% end %>
   <%= f.input :name, label: 'Name:', error: 'Whoops! We need a name here :)', wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
+   <label>URL Slug</label>
+  <code><%= @exhibit.slug %></code>
+  <%= link_to 'Regenerate Slug', regenerate_slug_exhibit_path(@exhibit.id), :method => :put, :type => "button", :class => "btn btn-default", data: { confirm: 'Woah there! This will change any links currently set to /' + @exhibit.slug + ' to a slug based on the latest name: ' + @exhibit.name } %>
   <%= f.input :description, label: 'Description:', error: 'Whoops! We need a description here :)', wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
   <%= f.association :organization, wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
 
@@ -18,7 +21,6 @@
 
   <label for="exampleInputFile">Exhibit Header Image Upload:</label>
   <%= f.file_field :image, inline_label: 'Logo Image:', error: 'Whoops! We need an image here :)', :class => "trailer" %>
-
  
   <%= f.button :submit, :class => "btn-success" %>
 
