@@ -2,21 +2,39 @@
   <div class="form-inputs">
   <%= p.input :title, label: "Title:", wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' }  %>
   <%= p.input :description, as: :text, label: "Desc:", wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' }  %>
+     
+   <h3>Post Images:</h3>
 
-     <label for="exampleInputFile">Post Image Upload:</label>
-    <%= p.simple_fields_for :images do |ph| %>
+      <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
 
-    	<% if ph.object.new_record? %>
- 	      
-        <%= ph.file_field :photo %>
-        
-        <% else %>
-         <%= image_tag ph.object.send :photo %>
-           <% end %>	
-    <% end %>
+      <tbody>
+
+      <%= p.simple_fields_for :images do |ph| %>
+          <% if ph.object.new_record? %>
+            <tr>
+              <td><%= ph.file_field :photo %></td>
+              <td></td>
+            </tr>
+          
+          <% else %>
+            <tr>
+              <td><%= image_tag ph.object.photo.url(:thumb) %></td>
+              <td><%= link_to 'Delete', ph.object, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        <% end %>
+
+        </tbody>
+        </table>
     </div>
-    <div class="form-actions header">
-  <%= p.button :submit, :class => "btn-success" %>
-  </div>
-<% end %>
 
+    <div class="form-actions header">
+    <%= p.button :submit, :class => "btn-success" %>
+    </div>
+<% end %>
