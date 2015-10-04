@@ -42,6 +42,7 @@ class PostsController < ApplicationController
     @exhibit = Post.find(params[:id]).exhibit_id
     @post = Post.find(params[:id])
     @path = (@post)
+    1.times {@post.images.build}
 
     render :layout => 'admin' 
     # 3.times { @post.images.build } # ... and this
@@ -81,10 +82,18 @@ class PostsController < ApplicationController
 
     @exhibit = Post.find(params[:id]).exhibit_id
     @post = Post.find(params[:id])
-    @post.update(post_params)
 
     respond_to do |format|
       if @post.update(post_params)
+
+      #   if params[:photos]
+      #   #===== The magic is here ;)
+      #   params[:photos].each { |photo|
+      #     @post.images.create(image: photo)
+      #   }
+      # end
+
+
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
       else
