@@ -13,7 +13,7 @@
     <% @organizations.each do |organization| %>
       <tr>
         <td><%= organization.name %></td>
-        <td><%= organization.description %></td>
+        <td><%= truncate(organization.description, length: 50) %></td>
         <td> <%= image_tag organization.image.url(:thumb) %></td>
 
         <td>

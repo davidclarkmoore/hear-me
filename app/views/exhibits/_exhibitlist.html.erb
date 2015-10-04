@@ -16,7 +16,7 @@
       <tr>
         <td><%= link_to exhibit.name, exhibit_posts_path(exhibit) %></td>
         <td><%= exhibit.organization.name %></td>
-        <td><%= exhibit.description %></td>
+        <td><%= truncate(exhibit.description, length: 50) %></td>
         <td><code><%= exhibit.slug %></code></td>
         <td><%= image_tag exhibit.image.url(:thumb) %></td>
 
