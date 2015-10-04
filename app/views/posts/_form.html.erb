@@ -1,7 +1,10 @@
 <%= simple_form_for @path, :html => { :multipart => true } do |p| %>
   <div class="form-inputs">
   <%= p.input :title, label: "Title:", wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' }  %>
-  <%= p.input :description, as: :text, label: "Desc:", wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' }  %>
+  <%= p.input :description, as: :text, label: "Desc:", wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control', rows: 10, cols: 10 } %>
+  <div class="alert alert-info" role="alert">
+    <p>This description field uses Markdown syntax <%= link_to 'read the reference', 'http://daringfireball.net/projects/markdown/syntax' %> to use in the description field above.</p>
+  </div>
      
    <h3>Post Images:</h3>
 
@@ -41,4 +44,5 @@
     <div class="form-actions header">
     <%= p.button :submit, :class => "btn-success" %>
     </div>
+    <div class="trailer"></div>
 <% end %>
