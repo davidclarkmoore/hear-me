@@ -17,6 +17,7 @@ class PostsController < ApplicationController
   def show
 
      @post = Post.find(params[:id])
+     @post_description = Redcarpet::Markdown.new(Redcarpet::Render::HTML).render(@post.description)
      post = Post.find(params[:id])
      @exhibit = Exhibit.friendly.find(Post.find(post.id).exhibit_id)
     @organization = Organization.find(@exhibit.organization_id)
