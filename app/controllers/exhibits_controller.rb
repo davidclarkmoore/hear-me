@@ -14,7 +14,7 @@ class ExhibitsController < ApplicationController
   def show
 
     @exhibit = Exhibit.friendly.find(params[:id])
-    @exposts = @exhibit.posts.all
+    @exposts = @exhibit.posts.where(published: "true")
     @organization = Organization.find(@exhibit.organization_id)  
     render :layout => 'application' 
 

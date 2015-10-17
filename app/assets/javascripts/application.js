@@ -12,8 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require jquery.bxslider
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require bootstrap-switch.min
+//= require turbolinks
+
 //= require_tree .
 

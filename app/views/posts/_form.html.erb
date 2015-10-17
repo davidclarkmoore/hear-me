@@ -38,8 +38,11 @@
 
         </tbody>
         </table>
+    <label>Published: <label>
+    <%= p.input_field :published, as: :boolean, boolean_style: :inline, class: 'checkbox checkbox-toggle' %>
 
     </div>
+
 
     <div class="form-actions header">
     <%= p.button :submit, :class => "btn-success" %>

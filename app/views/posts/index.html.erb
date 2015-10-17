@@ -26,6 +26,8 @@
         <tr>
           <th>Title</th>
           <th>Description</th>
+          <th>Published Status</th>
+          <th>Last Updated</th>
           <th>Actions</th>
           <th colspan="3"></th>
         </tr>
@@ -36,6 +38,14 @@
           <tr>
             <td><%= link_to post.title, post %></td>
             <td><%= truncate(post.description, length: 60) %></td>
+            <td>
+              <%= simple_form_for post, :remote => true do |p| %>
+                  <%= p.input_field :published, as: :boolean, boolean_style: :inline, class: 'checkbox checkbox-toggle auto-change' %>
+                  <%= p.button :submit, style: "display:none;" %>
+              
+              <% end %>
+            </td>
+             <td><%= time_ago_in_words(post.updated_at) + ' ago' %></td>
             <td><%= link_to 'Edit', edit_post_path(post) %></td>
             <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>

@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
 
-    @posts = Post.where("exhibit_id = ?", Exhibit.friendly.find(params[:exhibit_id]))
+    @posts = Post.where("exhibit_id = ?", Exhibit.friendly.find(params[:exhibit_id])).order(updated_at: :desc)
     @exhibit = Exhibit.friendly.find(params[:exhibit_id])
 
     render :layout => 'admin' 
@@ -122,6 +122,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :description, :exhibit_id, :post_id, images_attributes: [:photo, :id])
+      params.require(:post).permit(:title, :description, :exhibit_id, :post_id, :published, images_attributes: [:photo, :id])
     end
 end

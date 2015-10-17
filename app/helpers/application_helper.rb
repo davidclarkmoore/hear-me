@@ -19,4 +19,8 @@ module ApplicationHelper
 
     markdown.render(text).html_safe
   end
+
+  def human_boolean(boolean)
+    boolean ? 'Yes' : 'No'
+  end
 end
