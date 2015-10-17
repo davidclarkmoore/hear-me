@@ -27,6 +27,7 @@
 	<% @homeexhibits.each do |exhibit| %>
 		<div class="text-center">
 			<%= link_to (image_tag exhibit.image.url(:medium), :class => "wide" ), exhibit_path(exhibit) %>
+			<p><%= markdown(exhibit.description) %></p>
 			<%= link_to "Visit Exhibit", exhibit_path(exhibit) %>
 		</div>
 	<% end %>
