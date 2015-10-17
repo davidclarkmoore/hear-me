@@ -6,7 +6,7 @@ $(document).ready(function() {
 	$.fn.bootstrapSwitch.defaults.offColor = 'warning';
 	$("input.checkbox-toggle").bootstrapSwitch();
 
-	$("input.checkbox-toggle").on('switchChange.bootstrapSwitch', function(event, state) {
+	$("input.auto-change").on('switchChange.bootstrapSwitch', function(event, state) {
 		$(this).closest("form").submit();
 	});
 });
